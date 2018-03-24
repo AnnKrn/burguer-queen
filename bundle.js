@@ -1,122 +1,163 @@
 (function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s}return e})()({1:[function(require,module,exports){
 "use strict";
 
-var _reactDom = require("react-dom");
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.TableHead = TableHead;
+exports.TableBody = TableBody;
 
 var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require("react-dom");
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _data = require("./data.js");
+
+var _data2 = _interopRequireDefault(_data);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function All() {
+function TableHead() {
     return _react2.default.createElement(
-        "div",
+        "thead",
         null,
         _react2.default.createElement(
-            "h1",
-            null,
-            "Deasayuno"
-        ),
-        _react2.default.createElement(
-            "table",
+            "tr",
             null,
             _react2.default.createElement(
-                "thead",
+                "th",
                 null,
-                _react2.default.createElement(
-                    "tr",
-                    null,
-                    _react2.default.createElement(
-                        "th",
-                        null,
-                        "Item"
-                    ),
-                    _react2.default.createElement(
-                        "th",
-                        null,
-                        "Precio"
-                    ),
-                    _react2.default.createElement(
-                        "th",
-                        null,
-                        "Boton"
-                    )
-                )
+                "Item"
             ),
             _react2.default.createElement(
-                "tbody",
+                "th",
                 null,
-                _react2.default.createElement(
-                    "tr",
-                    null,
-                    _react2.default.createElement(
-                        "td",
-                        null,
-                        "Caf\xE9 Americano"
-                    ),
-                    _react2.default.createElement(
-                        "td",
-                        null,
-                        "5"
-                    ),
-                    _react2.default.createElement("td", null)
-                ),
-                _react2.default.createElement(
-                    "tr",
-                    null,
-                    _react2.default.createElement(
-                        "td",
-                        null,
-                        "Caf\xE9 con leche"
-                    ),
-                    _react2.default.createElement(
-                        "td",
-                        null,
-                        "7"
-                    ),
-                    _react2.default.createElement("td", null)
-                ),
-                _react2.default.createElement(
-                    "tr",
-                    null,
-                    _react2.default.createElement(
-                        "td",
-                        null,
-                        "Sandwich de jam\xF3n y queso"
-                    ),
-                    _react2.default.createElement(
-                        "td",
-                        null,
-                        "10"
-                    ),
-                    _react2.default.createElement("td", null)
-                ),
-                _react2.default.createElement(
-                    "tr",
-                    null,
-                    _react2.default.createElement(
-                        "td",
-                        null,
-                        "Jugo natural"
-                    ),
-                    _react2.default.createElement(
-                        "td",
-                        null,
-                        "7"
-                    ),
-                    _react2.default.createElement("td", null)
-                )
-            )
+                "Precio"
+            ),
+            _react2.default.createElement("th", null)
         )
+    );
+}
+// import Button from "./Buton.js"
+;
+
+function TableBody(props) {
+    // console.log(props)
+
+    // {props.Datos.map(desa => {
+    //     return (<tr>
+    //         <td>{desa.item}</td>
+    //     </tr>)
+    // })}
+    // {props.Datos.map(desa => {
+    //     return <td>{desa.price}</td>
+    // })}
+    return _react2.default.createElement(
+        "tr",
+        null,
+        _react2.default.createElement(
+            "td",
+            null,
+            "Caf\xE9 Americano"
+        ),
+        _react2.default.createElement(
+            "td",
+            null,
+            "5"
+        ),
+        _react2.default.createElement("td", null)
     );
 };
 
-_reactDom2.default.render(_react2.default.createElement(All, null), document.getElementById("react-container"));
+},{"./data.js":4,"react":30,"react-dom":27}],2:[function(require,module,exports){
+"use strict";
 
-},{"react":27,"react-dom":24}],2:[function(require,module,exports){
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = Title;
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require("react-dom");
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Title() {
+    return _react2.default.createElement(
+        "h1",
+        null,
+        "Deasayuno"
+    );
+};
+
+},{"react":30,"react-dom":27}],3:[function(require,module,exports){
+"use strict";
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require("react-dom");
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _Title = require("./Title.js");
+
+var _Title2 = _interopRequireDefault(_Title);
+
+var _Table = require("./Table.js");
+
+var _data = require("./data.js");
+
+var _data2 = _interopRequireDefault(_data);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function App() {
+    return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(_Title2.default, null),
+        _react2.default.createElement(
+            "table",
+            null,
+            _react2.default.createElement(_Table.TableHead, null),
+            _react2.default.createElement(
+                "tbody",
+                null,
+                _react2.default.createElement(_Table.TableBody, { Datos: _data2.default.desayuno })
+            )
+        )
+    );
+}
+// import Button from "./Buton.js"
+;
+
+_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById("react_container"));
+
+},{"./Table.js":1,"./Title.js":2,"./data.js":4,"react":30,"react-dom":27}],4:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var data = {
+    desayuno: [{ item: 'Cafe americano', price: '5' }, { item: 'Cafe con leche	', price: '7' }, { item: 'Sandwich de jamón y queso', price: '10' }, { item: 'Jugo natural', price: '7' }]
+};
+
+exports.default = data;
+
+},{}],5:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -193,7 +234,7 @@ var EventListener = {
 
 module.exports = EventListener;
 }).call(this,require('_process'))
-},{"./emptyFunction":7,"_process":19}],3:[function(require,module,exports){
+},{"./emptyFunction":10,"_process":22}],6:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -227,7 +268,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],4:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 "use strict";
 
 /**
@@ -257,7 +298,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],5:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -295,7 +336,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":4}],6:[function(require,module,exports){
+},{"./camelize":7}],9:[function(require,module,exports){
 'use strict';
 
 /**
@@ -333,7 +374,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":15}],7:[function(require,module,exports){
+},{"./isTextNode":18}],10:[function(require,module,exports){
 "use strict";
 
 /**
@@ -370,7 +411,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],8:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -390,7 +431,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = emptyObject;
 }).call(this,require('_process'))
-},{"_process":19}],9:[function(require,module,exports){
+},{"_process":22}],12:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -415,7 +456,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],10:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 /**
@@ -452,7 +493,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],11:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict';
 
 /**
@@ -483,7 +524,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],12:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -520,7 +561,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":11}],13:[function(require,module,exports){
+},{"./hyphenate":14}],16:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -576,7 +617,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":19}],14:[function(require,module,exports){
+},{"_process":22}],17:[function(require,module,exports){
 'use strict';
 
 /**
@@ -599,7 +640,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],15:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 'use strict';
 
 /**
@@ -622,7 +663,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":14}],16:[function(require,module,exports){
+},{"./isNode":17}],19:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -688,7 +729,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],17:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -753,7 +794,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = warning;
 }).call(this,require('_process'))
-},{"./emptyFunction":7,"_process":19}],18:[function(require,module,exports){
+},{"./emptyFunction":10,"_process":22}],21:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -845,7 +886,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],19:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -1031,7 +1072,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],20:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -1094,7 +1135,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 module.exports = checkPropTypes;
 
 }).call(this,require('_process'))
-},{"./lib/ReactPropTypesSecret":21,"_process":19,"fbjs/lib/invariant":13,"fbjs/lib/warning":17}],21:[function(require,module,exports){
+},{"./lib/ReactPropTypesSecret":24,"_process":22,"fbjs/lib/invariant":16,"fbjs/lib/warning":20}],24:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -1108,7 +1149,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],22:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 (function (process){
 /** @license React v16.2.0
  * react-dom.development.js
@@ -16506,7 +16547,7 @@ module.exports = reactDom;
 }
 
 }).call(this,require('_process'))
-},{"_process":19,"fbjs/lib/EventListener":2,"fbjs/lib/ExecutionEnvironment":3,"fbjs/lib/camelizeStyleName":5,"fbjs/lib/containsNode":6,"fbjs/lib/emptyFunction":7,"fbjs/lib/emptyObject":8,"fbjs/lib/focusNode":9,"fbjs/lib/getActiveElement":10,"fbjs/lib/hyphenateStyleName":12,"fbjs/lib/invariant":13,"fbjs/lib/shallowEqual":16,"fbjs/lib/warning":17,"object-assign":18,"prop-types/checkPropTypes":20,"react":27}],23:[function(require,module,exports){
+},{"_process":22,"fbjs/lib/EventListener":5,"fbjs/lib/ExecutionEnvironment":6,"fbjs/lib/camelizeStyleName":8,"fbjs/lib/containsNode":9,"fbjs/lib/emptyFunction":10,"fbjs/lib/emptyObject":11,"fbjs/lib/focusNode":12,"fbjs/lib/getActiveElement":13,"fbjs/lib/hyphenateStyleName":15,"fbjs/lib/invariant":16,"fbjs/lib/shallowEqual":19,"fbjs/lib/warning":20,"object-assign":21,"prop-types/checkPropTypes":23,"react":30}],26:[function(require,module,exports){
 /** @license React v16.2.0
  * react-dom.production.min.js
  *
@@ -16737,7 +16778,7 @@ var Sg={createPortal:Qg,findDOMNode:function(a){if(null==a)return null;if(1===a.
 E("40");return a._reactRootContainer?(Z.unbatchedUpdates(function(){Pg(null,null,a,!1,function(){a._reactRootContainer=null})}),!0):!1},unstable_createPortal:Qg,unstable_batchedUpdates:tc,unstable_deferredUpdates:Z.deferredUpdates,flushSync:Z.flushSync,__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{EventPluginHub:mb,EventPluginRegistry:Va,EventPropagators:Cb,ReactControlledComponent:qc,ReactDOMComponentTree:sb,ReactDOMEventListener:xd}};
 Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",rendererPackageName:"react-dom"});var Tg=Object.freeze({default:Sg}),Ug=Tg&&Sg||Tg;module.exports=Ug["default"]?Ug["default"]:Ug;
 
-},{"fbjs/lib/EventListener":2,"fbjs/lib/ExecutionEnvironment":3,"fbjs/lib/containsNode":6,"fbjs/lib/emptyFunction":7,"fbjs/lib/emptyObject":8,"fbjs/lib/focusNode":9,"fbjs/lib/getActiveElement":10,"fbjs/lib/shallowEqual":16,"object-assign":18,"react":27}],24:[function(require,module,exports){
+},{"fbjs/lib/EventListener":5,"fbjs/lib/ExecutionEnvironment":6,"fbjs/lib/containsNode":9,"fbjs/lib/emptyFunction":10,"fbjs/lib/emptyObject":11,"fbjs/lib/focusNode":12,"fbjs/lib/getActiveElement":13,"fbjs/lib/shallowEqual":19,"object-assign":21,"react":30}],27:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -16779,7 +16820,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react-dom.development.js":22,"./cjs/react-dom.production.min.js":23,"_process":19}],25:[function(require,module,exports){
+},{"./cjs/react-dom.development.js":25,"./cjs/react-dom.production.min.js":26,"_process":22}],28:[function(require,module,exports){
 (function (process){
 /** @license React v16.2.0
  * react.development.js
@@ -18140,7 +18181,7 @@ module.exports = react;
 }
 
 }).call(this,require('_process'))
-},{"_process":19,"fbjs/lib/emptyFunction":7,"fbjs/lib/emptyObject":8,"fbjs/lib/invariant":13,"fbjs/lib/warning":17,"object-assign":18,"prop-types/checkPropTypes":20}],26:[function(require,module,exports){
+},{"_process":22,"fbjs/lib/emptyFunction":10,"fbjs/lib/emptyObject":11,"fbjs/lib/invariant":16,"fbjs/lib/warning":20,"object-assign":21,"prop-types/checkPropTypes":23}],29:[function(require,module,exports){
 /** @license React v16.2.0
  * react.production.min.js
  *
@@ -18163,7 +18204,7 @@ var U={Children:{map:function(a,b,e){if(null==a)return a;var c=[];T(a,c,null,b,e
 d=a.key,g=a.ref,k=a._owner;if(null!=b){void 0!==b.ref&&(g=b.ref,k=G.current);void 0!==b.key&&(d=""+b.key);if(a.type&&a.type.defaultProps)var f=a.type.defaultProps;for(h in b)H.call(b,h)&&!I.hasOwnProperty(h)&&(c[h]=void 0===b[h]&&void 0!==f?f[h]:b[h])}var h=arguments.length-2;if(1===h)c.children=e;else if(1<h){f=Array(h);for(var l=0;l<h;l++)f[l]=arguments[l+2];c.children=f}return{$$typeof:r,type:a.type,key:d,ref:g,props:c,_owner:k}},createFactory:function(a){var b=J.bind(null,a);b.type=a;return b},
 isValidElement:K,version:"16.2.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentOwner:G,assign:m}},V=Object.freeze({default:U}),W=V&&U||V;module.exports=W["default"]?W["default"]:W;
 
-},{"fbjs/lib/emptyFunction":7,"fbjs/lib/emptyObject":8,"object-assign":18}],27:[function(require,module,exports){
+},{"fbjs/lib/emptyFunction":10,"fbjs/lib/emptyObject":11,"object-assign":21}],30:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -18174,4 +18215,4 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react.development.js":25,"./cjs/react.production.min.js":26,"_process":19}]},{},[1]);
+},{"./cjs/react.development.js":28,"./cjs/react.production.min.js":29,"_process":22}]},{},[3]);
