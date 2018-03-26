@@ -3,6 +3,6 @@ import ReactDOM from "react-dom";
 
 export default function Title() {
     return(
-        <h1>Deasayuno</h1>
+        <h1>Desayuno</h1>
     )
 };

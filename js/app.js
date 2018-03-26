@@ -1,10 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Title from "./Title.js";
-// import TableBody from "./Table.js";
+import TableBebidas from "./bebidas.js";
 import Table from "./TableHead.js";
-
-// import Button from "./Buton.js"
 import data from "./data.js"
 
 function App(props) {
@@ -12,9 +10,9 @@ function App(props) {
     <div>
         <Title/>,
         <Table  Datos={data.desayuno}/>,
-        {/* <Table Datos={data.hamburguesas}/>, */}
+        <TableBebidas Datos={data.hamburguesa}/>,
         <Table Datos={data.acompañamientos}/>,
-        {/* <Table Datos={data.bebidas}/>, */}
+        <TableBebidas Datos={data.bebidas}/>,
         <Table Datos={data.ingredienteExtra}/>
     </div>
     )
