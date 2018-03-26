@@ -3,15 +3,15 @@ import ReactDOM from "react-dom";
 // import TableBody from "./Table.js";
 import data from "./data.js";
 
-export default function Table(props) {
+export default function TableBebidas(props) {
     console.log(props)
     return(
         <table>
             <thead>
                 <tr>
                     <th>Item</th>
-                    <th>Precio</th>
-                    <th></th>
+                    <th>Grande</th>
+                    <th>Chico</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,7 +19,9 @@ export default function Table(props) {
                 props.Datos.map(desa => {
                     return(<tr>
                         <td>{desa.item}</td>
-                        <td>{desa.price}</td>
+                        <td>{desa.size.grande}</td>
+                        <td>{desa.size.chico}</td>
+
                         </tr>
                             ) 
                         })

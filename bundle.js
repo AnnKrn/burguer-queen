@@ -4,53 +4,6 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = TableBody;
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require("react-dom");
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _data = require("./data.js");
-
-var _data2 = _interopRequireDefault(_data);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function TableBody(props) {
-    console.log(props);
-
-    return props.Datos.map(function (desa) {
-        return _react2.default.createElement(
-            "tr",
-            null,
-            _react2.default.createElement(
-                "td",
-                null,
-                desa.item
-            ),
-            _react2.default.createElement(
-                "td",
-                null,
-                desa.price
-            )
-        );
-    });
-};
-
-/* <td>Café Americano</td>
-          <td>5</td>
-          <td></td> */
-
-},{"./data.js":5,"react":31,"react-dom":28}],2:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
 exports.default = Table;
 
 var _react = require("react");
@@ -60,10 +13,6 @@ var _react2 = _interopRequireDefault(_react);
 var _reactDom = require("react-dom");
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _Table = require("./Table.js");
-
-var _Table2 = _interopRequireDefault(_Table);
 
 var _data = require("./data.js");
 
@@ -116,9 +65,11 @@ function Table(props) {
             })
         )
     );
-};
+}
+// import TableBody from "./Table.js";
+;
 
-},{"./Table.js":1,"./data.js":5,"react":31,"react-dom":28}],3:[function(require,module,exports){
+},{"./data.js":5,"react":31,"react-dom":28}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -140,11 +91,11 @@ function Title() {
     return _react2.default.createElement(
         "h1",
         null,
-        "Deasayuno"
+        "Desayuno"
     );
 };
 
-},{"react":31,"react-dom":28}],4:[function(require,module,exports){
+},{"react":31,"react-dom":28}],3:[function(require,module,exports){
 "use strict";
 
 var _react = require("react");
@@ -159,6 +110,10 @@ var _Title = require("./Title.js");
 
 var _Title2 = _interopRequireDefault(_Title);
 
+var _bebidas = require("./bebidas.js");
+
+var _bebidas2 = _interopRequireDefault(_bebidas);
+
 var _TableHead = require("./TableHead.js");
 
 var _TableHead2 = _interopRequireDefault(_TableHead);
@@ -169,7 +124,6 @@ var _data2 = _interopRequireDefault(_data);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import TableBody from "./Table.js";
 function App(props) {
     return _react2.default.createElement(
         "div",
@@ -178,18 +132,99 @@ function App(props) {
         ",",
         _react2.default.createElement(_TableHead2.default, { Datos: _data2.default.desayuno }),
         ",",
+        _react2.default.createElement(_bebidas2.default, { Datos: _data2.default.hamburguesa }),
+        ",",
         _react2.default.createElement(_TableHead2.default, { Datos: _data2.default.acompañamientos }),
+        ",",
+        _react2.default.createElement(_bebidas2.default, { Datos: _data2.default.bebidas }),
         ",",
         _react2.default.createElement(_TableHead2.default, { Datos: _data2.default.ingredienteExtra })
     );
-}
-
-// import Button from "./Buton.js"
-;
+};
 
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById("react_container"));
 
-},{"./TableHead.js":2,"./Title.js":3,"./data.js":5,"react":31,"react-dom":28}],5:[function(require,module,exports){
+},{"./TableHead.js":1,"./Title.js":2,"./bebidas.js":4,"./data.js":5,"react":31,"react-dom":28}],4:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = TableBebidas;
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require("react-dom");
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _data = require("./data.js");
+
+var _data2 = _interopRequireDefault(_data);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function TableBebidas(props) {
+    console.log(props);
+    return _react2.default.createElement(
+        "table",
+        null,
+        _react2.default.createElement(
+            "thead",
+            null,
+            _react2.default.createElement(
+                "tr",
+                null,
+                _react2.default.createElement(
+                    "th",
+                    null,
+                    "Item"
+                ),
+                _react2.default.createElement(
+                    "th",
+                    null,
+                    "Grande"
+                ),
+                _react2.default.createElement(
+                    "th",
+                    null,
+                    "Chico"
+                )
+            )
+        ),
+        _react2.default.createElement(
+            "tbody",
+            null,
+            props.Datos.map(function (desa) {
+                return _react2.default.createElement(
+                    "tr",
+                    null,
+                    _react2.default.createElement(
+                        "td",
+                        null,
+                        desa.item
+                    ),
+                    _react2.default.createElement(
+                        "td",
+                        null,
+                        desa.size.grande
+                    ),
+                    _react2.default.createElement(
+                        "td",
+                        null,
+                        desa.size.chico
+                    )
+                );
+            })
+        )
+    );
+}
+// import TableBody from "./Table.js";
+;
+
+},{"./data.js":5,"react":31,"react-dom":28}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -199,15 +234,24 @@ Object.defineProperty(exports, "__esModule", {
 var data = {
     desayuno: [{ item: 'Cafe americano', price: '5' }, { item: 'Cafe con leche ', price: '7' }, { item: 'Sandwich de jamón y queso', price: '10' }, { item: 'Jugo natural', price: '7' }],
     acompañamientos: [{ item: 'Papas fritas', price: '5' }, { item: 'Onion Rings', price: '5' }],
-    // hamburguesas: [
-    //     { item: 'res', sencilla: '10', doble: '15'},
-    //     { item: 'pollo', sencilla: '10', doble: '15'},
-    //     { item: 'vegetariana', sencilla: '10', doble: '15'},
-    // ],
-    // bebidas: [
-    //     { item: 'agua', '500ml': '5', '750ml': '8', },
-    //     { item: 'gaseosa', '500ml': '5', '750ml': '10'},
-    // ],
+    hamburguesas: [{ item: 'sensilla', price: '10' }, { item: 'doble', price: '15' }],
+    bebidas: [{ item: 'agua', size: {
+            grande: '5',
+            chico: '8'
+        } }, { item: 'gaseosa', size: {
+            grande: '5',
+            chico: '10'
+        } }],
+    hamburguesa: [{ item: 'pollo', size: {
+            grande: '15',
+            chico: '10'
+        } }, { item: 'res', size: {
+            grande: '15',
+            chico: '10'
+        } }, { item: 'vegetariana', size: {
+            grande: '15',
+            chico: '10'
+        } }],
     ingredienteExtra: [{ item: 'huevo', price: '5' }, { item: 'queso', price: '5' }]
 };
 
@@ -18271,4 +18315,4 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 }).call(this,require('_process'))
-},{"./cjs/react.development.js":29,"./cjs/react.production.min.js":30,"_process":23}]},{},[4]);
+},{"./cjs/react.development.js":29,"./cjs/react.production.min.js":30,"_process":23}]},{},[3]);

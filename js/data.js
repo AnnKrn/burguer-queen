@@ -10,15 +10,34 @@ const data = {
         { item: 'Papas fritas', price: '5'},
         { item: 'Onion Rings', price: '5'},
     ],
-    // hamburguesas: [
-    //     { item: 'res', sencilla: '10', doble: '15'},
-    //     { item: 'pollo', sencilla: '10', doble: '15'},
-    //     { item: 'vegetariana', sencilla: '10', doble: '15'},
-    // ],
-    // bebidas: [
-    //     { item: 'agua', '500ml': '5', '750ml': '8', },
-    //     { item: 'gaseosa', '500ml': '5', '750ml': '10'},
-    // ],
+    hamburguesas: [
+        { item: 'sensilla', price: '10'},
+        { item: 'doble', price: '15'},
+    ],
+    bebidas: [
+        { item: 'agua', size:{
+            grande: '5',
+            chico: '8'
+        }},
+        { item: 'gaseosa', size:{
+            grande: '5',
+            chico: '10'
+        }}
+    ],
+    hamburguesa: [
+        { item: 'pollo', size:{
+            grande: '15',
+            chico: '10'
+        }},
+        { item: 'res', size:{
+            grande: '15',
+            chico: '10'
+        }},
+        { item: 'vegetariana', size:{
+            grande: '15',
+            chico: '10'
+        }}  
+    ],
     ingredienteExtra: [
         { item: 'huevo', price: '5'},
         { item: 'queso', price: '5'},
