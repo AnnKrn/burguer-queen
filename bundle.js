@@ -23,14 +23,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function TableBody(props) {
     console.log(props);
 
-    // {props.Datos.map(desa => {
-    //     return (<tr>
-    //                 <td>{desa.item}</td>
-    //             </tr>)
-    // })}
-    // {props.Datos.map(desa => {
-    //     return <td>{desa.price}</td>
-    // })}
     return props.Datos.map(function (desa) {
         return _react2.default.createElement(
             "tr",
@@ -59,7 +51,7 @@ function TableBody(props) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = TableHead;
+exports.default = Table;
 
 var _react = require("react");
 
@@ -69,31 +61,64 @@ var _reactDom = require("react-dom");
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _Table = require("./Table.js");
+
+var _Table2 = _interopRequireDefault(_Table);
+
+var _data = require("./data.js");
+
+var _data2 = _interopRequireDefault(_data);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function TableHead() {
+function Table(props) {
+    console.log(props);
     return _react2.default.createElement(
-        "thead",
+        "table",
         null,
         _react2.default.createElement(
-            "tr",
+            "thead",
             null,
             _react2.default.createElement(
-                "th",
+                "tr",
                 null,
-                "Item"
-            ),
-            _react2.default.createElement(
-                "th",
-                null,
-                "Precio"
-            ),
-            _react2.default.createElement("th", null)
+                _react2.default.createElement(
+                    "th",
+                    null,
+                    "Item"
+                ),
+                _react2.default.createElement(
+                    "th",
+                    null,
+                    "Precio"
+                ),
+                _react2.default.createElement("th", null)
+            )
+        ),
+        _react2.default.createElement(
+            "tbody",
+            null,
+            props.Datos.map(function (desa) {
+                return _react2.default.createElement(
+                    "tr",
+                    null,
+                    _react2.default.createElement(
+                        "td",
+                        null,
+                        desa.item
+                    ),
+                    _react2.default.createElement(
+                        "td",
+                        null,
+                        desa.price
+                    )
+                );
+            })
         )
     );
 };
 
-},{"react":31,"react-dom":28}],3:[function(require,module,exports){
+},{"./Table.js":1,"./data.js":5,"react":31,"react-dom":28}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -134,10 +159,6 @@ var _Title = require("./Title.js");
 
 var _Title2 = _interopRequireDefault(_Title);
 
-var _Table = require("./Table.js");
-
-var _Table2 = _interopRequireDefault(_Table);
-
 var _TableHead = require("./TableHead.js");
 
 var _TableHead2 = _interopRequireDefault(_TableHead);
@@ -148,31 +169,18 @@ var _data2 = _interopRequireDefault(_data);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function App() {
+// import TableBody from "./Table.js";
+function App(props) {
     return _react2.default.createElement(
         "div",
         null,
         _react2.default.createElement(_Title2.default, null),
-        _react2.default.createElement(
-            "table",
-            null,
-            _react2.default.createElement(_TableHead2.default, null),
-            _react2.default.createElement(
-                "tbody",
-                null,
-                _react2.default.createElement(_Table2.default, { Datos: _data2.default.desayuno })
-            )
-        ),
-        _react2.default.createElement(
-            "table",
-            null,
-            _react2.default.createElement(_TableHead2.default, null),
-            _react2.default.createElement(
-                "tbody",
-                null,
-                _react2.default.createElement(_Table2.default, { Datos: _data2.default.commida })
-            )
-        )
+        ",",
+        _react2.default.createElement(_TableHead2.default, { Datos: _data2.default.desayuno }),
+        ",",
+        _react2.default.createElement(_TableHead2.default, { Datos: _data2.default.acompañamientos }),
+        ",",
+        _react2.default.createElement(_TableHead2.default, { Datos: _data2.default.ingredienteExtra })
     );
 }
 
@@ -181,7 +189,7 @@ function App() {
 
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById("react_container"));
 
-},{"./Table.js":1,"./TableHead.js":2,"./Title.js":3,"./data.js":5,"react":31,"react-dom":28}],5:[function(require,module,exports){
+},{"./TableHead.js":2,"./Title.js":3,"./data.js":5,"react":31,"react-dom":28}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -189,8 +197,18 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var data = {
-    desayuno: [{ item: 'Cafe americano', price: '5' }, { item: 'Cafe con leche	', price: '7' }, { item: 'Sandwich de jamón y queso', price: '10' }, { item: 'Jugo natural', price: '7' }],
-    commida: [{ item: 'Papas fritas', price: '5' }, { item: 'Onion Rings', price: '5' }]
+    desayuno: [{ item: 'Cafe americano', price: '5' }, { item: 'Cafe con leche ', price: '7' }, { item: 'Sandwich de jamón y queso', price: '10' }, { item: 'Jugo natural', price: '7' }],
+    acompañamientos: [{ item: 'Papas fritas', price: '5' }, { item: 'Onion Rings', price: '5' }],
+    // hamburguesas: [
+    //     { item: 'res', sencilla: '10', doble: '15'},
+    //     { item: 'pollo', sencilla: '10', doble: '15'},
+    //     { item: 'vegetariana', sencilla: '10', doble: '15'},
+    // ],
+    // bebidas: [
+    //     { item: 'agua', '500ml': '5', '750ml': '8', },
+    //     { item: 'gaseosa', '500ml': '5', '750ml': '10'},
+    // ],
+    ingredienteExtra: [{ item: 'huevo', price: '5' }, { item: 'queso', price: '5' }]
 };
 
 exports.default = data;
