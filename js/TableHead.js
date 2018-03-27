@@ -20,6 +20,7 @@ export default function Table(props) {
                     return(<tr>
                         <td>{desa.item}</td>
                         <td>{desa.price}</td>
+                        <td><button>Agregar</button></td>
                         </tr>
                             ) 
                         })
