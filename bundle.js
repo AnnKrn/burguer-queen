@@ -4,81 +4,128 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = Table;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = require("react-dom");
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _data = require("./data.js");
-
-var _data2 = _interopRequireDefault(_data);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Table(props) {
-    console.log(props);
-    return _react2.default.createElement(
-        "table",
-        null,
-        _react2.default.createElement(
-            "thead",
-            null,
-            _react2.default.createElement(
-                "tr",
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Table = function (_React$Component) {
+    _inherits(Table, _React$Component);
+
+    function Table(props) {
+        _classCallCheck(this, Table);
+
+        var _this = _possibleConstructorReturn(this, (Table.__proto__ || Object.getPrototypeOf(Table)).call(this, props));
+
+        _this.item = "Producto";
+        _this.price = "Precio";
+
+        return _this;
+    }
+
+    _createClass(Table, [{
+        key: "render",
+        value: function render() {
+
+            return _react2.default.createElement(
+                "table",
                 null,
                 _react2.default.createElement(
-                    "th",
-                    null,
-                    "Item"
-                ),
-                _react2.default.createElement(
-                    "th",
-                    null,
-                    "Precio"
-                ),
-                _react2.default.createElement("th", null)
-            )
-        ),
-        _react2.default.createElement(
-            "tbody",
-            null,
-            props.Datos.map(function (desa) {
-                return _react2.default.createElement(
-                    "tr",
+                    "thead",
                     null,
                     _react2.default.createElement(
-                        "td",
-                        null,
-                        desa.item
-                    ),
-                    _react2.default.createElement(
-                        "td",
-                        null,
-                        desa.price
-                    ),
-                    _react2.default.createElement(
-                        "td",
+                        "tr",
                         null,
                         _react2.default.createElement(
-                            "button",
+                            "th",
                             null,
-                            "Agregar"
-                        )
+                            this.item
+                        ),
+                        _react2.default.createElement(
+                            "th",
+                            null,
+                            this.price
+                        ),
+                        _react2.default.createElement("th", null)
                     )
-                );
-            })
-        )
-    );
-}
-// import TableBody from "./Table.js";
-;
+                ),
+                _react2.default.createElement(
+                    "tbody",
+                    null,
+                    this.props.Datos.map(function (desa, index) {
+                        return _react2.default.createElement(
+                            "tr",
+                            null,
+                            _react2.default.createElement(
+                                "td",
+                                { key: index },
+                                desa.item
+                            ),
+                            _react2.default.createElement(
+                                "td",
+                                { key: index },
+                                desa.price
+                            ),
+                            _react2.default.createElement(
+                                "td",
+                                null,
+                                _react2.default.createElement(
+                                    "button",
+                                    null,
+                                    "Agregar"
+                                )
+                            )
+                        );
+                    })
+                )
+            );
+        }
+    }]);
 
-},{"./data.js":5,"react":31,"react-dom":28}],2:[function(require,module,exports){
+    return Table;
+}(_react2.default.Component);
+
+// export default function Table(props) {
+//     console.log(props)
+//     return(
+//         <table>
+//             <thead>
+//                 <tr>
+//                     <th>Item</th>
+//                     <th>Precio</th>
+//                     <th></th>
+//                 </tr>
+//             </thead>
+//             <tbody>
+//             {
+//                 props.Datos.map(desa => {
+//                     return(<tr>
+//                         <td>{desa.item}</td>
+//                         <td>{desa.price}</td>
+//                         <td><button>Agregar</button></td>
+//                         </tr>
+//                             ) 
+//                         })
+//                     }
+
+//             </tbody>
+//         </table>
+//     )
+// };
+
+exports.default = Table;
+
+},{"react":31}],2:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -107,6 +154,8 @@ function Title() {
 },{"react":31,"react-dom":28}],3:[function(require,module,exports){
 "use strict";
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
@@ -133,23 +182,56 @@ var _data2 = _interopRequireDefault(_data);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function App(props) {
-    return _react2.default.createElement(
-        "div",
-        null,
-        _react2.default.createElement(_Title2.default, null),
-        ",",
-        _react2.default.createElement(_TableHead2.default, { Datos: _data2.default.desayuno }),
-        ",",
-        _react2.default.createElement(_bebidas2.default, { Datos: _data2.default.hamburguesa }),
-        ",",
-        _react2.default.createElement(_TableHead2.default, { Datos: _data2.default.acompañamientos }),
-        ",",
-        _react2.default.createElement(_bebidas2.default, { Datos: _data2.default.bebidas }),
-        ",",
-        _react2.default.createElement(_TableHead2.default, { Datos: _data2.default.ingredienteExtra })
-    );
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var App = function (_React$Component) {
+    _inherits(App, _React$Component);
+
+    function App() {
+        _classCallCheck(this, App);
+
+        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    }
+
+    _createClass(App, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                null,
+                _react2.default.createElement(_Title2.default, null),
+                ",",
+                _react2.default.createElement(_TableHead2.default, { Datos: _data2.default.desayuno }),
+                ",",
+                _react2.default.createElement(_bebidas2.default, { Datos: _data2.default.hamburguesa }),
+                ",",
+                _react2.default.createElement(_TableHead2.default, { Datos: _data2.default.acompañamientos }),
+                ",",
+                _react2.default.createElement(_bebidas2.default, { Datos: _data2.default.bebidas }),
+                ",",
+                _react2.default.createElement(_TableHead2.default, { Datos: _data2.default.ingredienteExtra })
+            );
+        }
+    }]);
+
+    return App;
+}(_react2.default.Component);
+// function App(props) {
+//     return (
+//     <div>
+//         <Title/>,
+//         <Table  Datos={data.desayuno}/>,
+//         <TableBebidas Datos={data.hamburguesa}/>,
+//         <Table Datos={data.acompañamientos}/>,
+//         <TableBebidas Datos={data.bebidas}/>,
+//         <Table Datos={data.ingredienteExtra}/>
+//     </div>
+//     )
+// };
 
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById("react_container"));
 
@@ -159,90 +241,133 @@ _reactDom2.default.render(_react2.default.createElement(App, null), document.get
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = TableBebidas;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = require("react-dom");
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _data = require("./data.js");
-
-var _data2 = _interopRequireDefault(_data);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function TableBebidas(props) {
-    console.log(props);
-    return _react2.default.createElement(
-        "table",
-        null,
-        _react2.default.createElement(
-            "thead",
-            null,
-            _react2.default.createElement(
-                "tr",
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var TableBebidas = function (_React$Component) {
+    _inherits(TableBebidas, _React$Component);
+
+    function TableBebidas(props) {
+        _classCallCheck(this, TableBebidas);
+
+        var _this = _possibleConstructorReturn(this, (TableBebidas.__proto__ || Object.getPrototypeOf(TableBebidas)).call(this, props));
+
+        _this.item = "Producto";
+        _this.big = "Grande";
+        _this.small = "Chico";
+        return _this;
+    }
+
+    _createClass(TableBebidas, [{
+        key: "render",
+        value: function render() {
+
+            return _react2.default.createElement(
+                "table",
                 null,
                 _react2.default.createElement(
-                    "th",
-                    null,
-                    "Item"
-                ),
-                _react2.default.createElement(
-                    "th",
-                    null,
-                    "Grande"
-                ),
-                _react2.default.createElement(
-                    "th",
-                    null,
-                    "Chico"
-                )
-            )
-        ),
-        _react2.default.createElement(
-            "tbody",
-            null,
-            props.Datos.map(function (desa) {
-                return _react2.default.createElement(
-                    "tr",
+                    "thead",
                     null,
                     _react2.default.createElement(
-                        "td",
-                        null,
-                        desa.item
-                    ),
-                    _react2.default.createElement(
-                        "td",
-                        null,
-                        desa.size.grande
-                    ),
-                    _react2.default.createElement(
-                        "td",
-                        null,
-                        desa.size.chico
-                    ),
-                    _react2.default.createElement(
-                        "td",
+                        "tr",
                         null,
                         _react2.default.createElement(
-                            "button",
+                            "th",
                             null,
-                            "Agregar"
+                            this.item
+                        ),
+                        _react2.default.createElement(
+                            "th",
+                            null,
+                            this.big
+                        ),
+                        _react2.default.createElement(
+                            "th",
+                            null,
+                            this.small
                         )
                     )
-                );
-            })
-        )
-    );
-}
-// import TableBody from "./Table.js";
-;
+                ),
+                _react2.default.createElement(
+                    "tbody",
+                    null,
+                    this.props.Datos.map(function (desa, index) {
+                        return _react2.default.createElement(
+                            "tr",
+                            null,
+                            _react2.default.createElement(
+                                "td",
+                                { key: index },
+                                desa.size.grande
+                            ),
+                            _react2.default.createElement(
+                                "td",
+                                { key: index },
+                                desa.size.chico
+                            ),
+                            _react2.default.createElement(
+                                "td",
+                                null,
+                                _react2.default.createElement(
+                                    "button",
+                                    null,
+                                    "Agregar"
+                                )
+                            )
+                        );
+                    })
+                )
+            );
+        }
+    }]);
 
-},{"./data.js":5,"react":31,"react-dom":28}],5:[function(require,module,exports){
+    return TableBebidas;
+}(_react2.default.Component);
+
+// export default function TableBebidas(props) {
+//     console.log(props)
+//     return(
+//         <table>
+//             <thead>
+//                 <tr>
+//                     <th>Item</th>
+//                     <th>Grande</th>
+//                     <th>Chico</th>
+//                 </tr>
+//             </thead>
+//             <tbody>
+//             {
+//                 props.Datos.map(desa => {
+//                     return(<tr>
+//                         <td>{desa.item}</td>
+//                         <td>{desa.size.grande}</td>
+//                         <td>{desa.size.chico}</td>
+//                         <td><button>Agregar</button></td>
+//                         </tr>
+//                             ) 
+//                         })
+//                     }
+
+//             </tbody>
+//         </table>
+//     )
+// };
+
+exports.default = TableBebidas;
+
+},{"react":31}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
