@@ -60,6 +60,15 @@ function Table(props) {
                         "td",
                         null,
                         desa.price
+                    ),
+                    _react2.default.createElement(
+                        "td",
+                        null,
+                        _react2.default.createElement(
+                            "button",
+                            null,
+                            "Agregar"
+                        )
                     )
                 );
             })
@@ -91,7 +100,7 @@ function Title() {
     return _react2.default.createElement(
         "h1",
         null,
-        "Desayuno"
+        "Men\xFA"
     );
 };
 
@@ -215,6 +224,15 @@ function TableBebidas(props) {
                         "td",
                         null,
                         desa.size.chico
+                    ),
+                    _react2.default.createElement(
+                        "td",
+                        null,
+                        _react2.default.createElement(
+                            "button",
+                            null,
+                            "Agregar"
+                        )
                     )
                 );
             })
@@ -236,11 +254,11 @@ var data = {
     acompañamientos: [{ item: 'Papas fritas', price: '5' }, { item: 'Onion Rings', price: '5' }],
     hamburguesas: [{ item: 'sensilla', price: '10' }, { item: 'doble', price: '15' }],
     bebidas: [{ item: 'agua', size: {
-            grande: '5',
-            chico: '8'
+            chico: '5',
+            grande: '8'
         } }, { item: 'gaseosa', size: {
-            grande: '5',
-            chico: '10'
+            chico: '5',
+            grande: '10'
         } }],
     hamburguesa: [{ item: 'pollo', size: {
             grande: '15',

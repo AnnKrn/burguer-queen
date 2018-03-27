@@ -16,12 +16,12 @@ const data = {
     ],
     bebidas: [
         { item: 'agua', size:{
-            grande: '5',
-            chico: '8'
+            chico: '5',
+            grande: '8'
         }},
         { item: 'gaseosa', size:{
-            grande: '5',
-            chico: '10'
+            chico: '5',
+            grande: '10'
         }}
     ],
     hamburguesa: [

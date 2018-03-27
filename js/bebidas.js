@@ -21,7 +21,7 @@ export default function TableBebidas(props) {
                         <td>{desa.item}</td>
                         <td>{desa.size.grande}</td>
                         <td>{desa.size.chico}</td>
-
+                        <td><button>Agregar</button></td>
                         </tr>
                             ) 
                         })
